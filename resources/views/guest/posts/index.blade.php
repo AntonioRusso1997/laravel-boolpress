@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
 @section('content')    
     <div class="container-fluid mt-100">
@@ -25,22 +25,14 @@
                     @foreach ($posts as $post)
                         <div class="card-body py-3">
                             <div class="row no-gutters align-items-center">
-                                <div class="col"><a href="{{ route('admin.posts.show', $post->slug) }}" class="text-big font-weight-semibold" data-abc="true">{{$post['title']}}</a></div>
+                                <div class="col"><a href="{{ route('posts.show', $post->slug) }}" class="text-big font-weight-semibold" data-abc="true">{{$post['title']}}</a></div>
                                 <div class="d-none d-md-block col-6">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col-3">100</div>
+                                        <div class="col-3 ">100</div>
                                         <div class="col-3">100</div>
                                         <div class="media col-6 align-items-center"> <img src="https://i.imgur.com/Ur43esv.jpg" alt="" class="d-block ui-w-30 rounded-circle">
                                             <div class="media-body flex-truncate ml-2"> <a href="" class="d-block text-truncate" data-abc="true">{{$post['author']}}</a>
                                                 <div class="text-muted small text-truncate">{{$post['created_at']}} &nbsp;·&nbsp;</div>
-                                            </div>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <a class="btn btn-warning fw-bold" data-mdb-ripple-color="dark" href="{{ route('admin.posts.edit', $post['id']) }}" class="card-link">Edit</a>
-                                                <form class="delete-post" method="post" action="{{ route('admin.posts.destroy', $post['id']) }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-danger fw-bold" data-mdb-ripple-color="dark" type="submit">Delete</button>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>

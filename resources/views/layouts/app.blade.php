@@ -19,12 +19,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-secondary">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav style="height: 50px" class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+            <div class="container h-100 my-0">
+                <a class="navbar-brand h-100 p-0" href="{{ url('/') }}">
+                    <img class="h-100" src="https://i.ibb.co/F3Wvjqb/boolean-forum.png" alt="Logo Boolean Forum">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="bg-secondary py-4">
             @yield('content')
         </main>
     </div>

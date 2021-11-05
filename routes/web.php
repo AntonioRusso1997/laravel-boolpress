@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 // Rotta che gestisce la homepage visible agli utenti
 Route::get('/', 'HomeController@index')->name('index');
 
+//Rotta per guest
+Route::resource('/posts', 'PostController');
+
 //Serie di rotte che gestisce tutto il meccanismo di autenticazione
 Auth::routes();
 

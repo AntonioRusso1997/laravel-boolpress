@@ -37268,7 +37268,27 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    functionsIn = _require.functionsIn;
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.confirmDelete = function() {
+//     const resp = confirm('Vuoi cancellare?')
+//     if(!resp) {
+//         event.preventDefault();
+//     }
+// }
+
+
+var deleteForm = document.querySelectorAll('.delete-post');
+deleteForm.forEach(function (item) {
+  item.addEventListener('submit', function (e) {
+    var resp = confirm('Vuoi cancellare?');
+
+    if (!resp) {
+      e.preventDefault();
+    }
+  });
+});
 
 /***/ }),
 
