@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+            <div class="card border-0 my-shadow">
+                <div class="my-bg-dark card-header text-white font-weight-bold text-center">{{ __('Verify Your Email Address') }}</div>
 
-                <div class="card-body">
+                <div class="card-body my-bg text-white">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
                             {{ __('A fresh verification link has been sent to your email address.') }}

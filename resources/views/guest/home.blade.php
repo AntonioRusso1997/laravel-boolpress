@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <title>Boolean Forum</title>
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #6c757e;
                 color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -74,12 +74,12 @@
             }
         </style>
     </head>
-    <body>
+    <body class="my-bg">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

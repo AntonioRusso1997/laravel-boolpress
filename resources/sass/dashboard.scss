@@ -1,0 +1,22 @@
+@import 'variables';
+
+.my-navbar {
+    background: rgba(0,34,78,1);
+}
+
+.my-sidebar {
+    background: rgb(0,75,172);
+    background: linear-gradient(0deg, rgba(0,75,172,1) 0%, rgba(0,34,78,1) 100%);
+    // margin: 10px;
+    // width: calc((100% / 6) - 20px);
+    // height: calc(100% - 20px);
+    font-size: 16px;
+    i {
+        font-size: 20px;
+    }
+}
+
+.my-main-bg {
+    background-color: rgb(17 99 169);
+}
+
