@@ -77,9 +77,16 @@
     <body class="my-bg">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links d-flex">
                     @auth
-                        <a href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

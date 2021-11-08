@@ -76,6 +76,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.categories.create') }}">
+                                <i class="fas fa-plus"></i>
+                                New Category
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-tags"></i>
                                 Tags
