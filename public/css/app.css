@@ -76,6 +76,10 @@ main {
   font-size: 18px;
 }
 
+.my-w-40px {
+  width: 40px !important;
+}
+
 /* Buttons */
 
 .expand_button {

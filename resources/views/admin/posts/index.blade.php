@@ -34,7 +34,7 @@
                                             @endif                                            
                                         </div>
                                         <div class="col-3 text-light">100</div>
-                                        <div class="media col-6 align-items-center"> <img src="https://spesavicino.it/storage/03630380982/img/profile/logo.jpg" alt="" style="width: 40px" class="d-block rounded-circle">
+                                        <div class="media col-6 align-items-center"> <img src="https://spesavicino.it/storage/03630380982/img/profile/logo.jpg" alt="" class="my-w-40px d-block rounded-circle">
                                             <div class="media-body flex-truncate ml-2"> <a href="" class="my-text-lightblue d-block text-truncate" data-abc="true">{{$post['author']}}</a>
                                                 <div class="text-light small text-truncate">{{$post['created_at']}}</div>
                                             </div>

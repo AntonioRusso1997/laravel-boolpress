@@ -22,7 +22,7 @@
 <body class="my-main-bg h-100">
     <div id="app">
         <nav style="height: 50px" class="my-navbar navbar navbar-expand-md navbar-dark flex-md-nowrap p-0">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0 h-100" href="{{ route('admin.index') }}"><img class="h-100" src="https://i.ibb.co/F3Wvjqb/boolean-forum.png" alt=""></a>
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0 h-100" href="/"><img class="h-100" src="https://i.ibb.co/F3Wvjqb/boolean-forum.png" alt=""></a>
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
