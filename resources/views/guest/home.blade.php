@@ -103,7 +103,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('posts.index')}}">Post</a>
+                    <a href="{{route('posts.index')}}">--All Posts--</a>
+                </div>
+                <div class="links">
+                    <a href="{{route('categories.index')}}">--Categories--</a>
                 </div>
             </div>
         </div>
