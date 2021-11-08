@@ -40,6 +40,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label class="text-white my-font-s20" for="author">Categoria</label>
+                                <select name="category_id" id="category_id" class="form-control">
+                                    <option value="">-- Seleziona la categoria --</option>
+                                  @foreach ($categories as $category)
+                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                  @endforeach
+                                </select>
+                                @error('category_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                <button type="submit" class="btn btn-success">Invia</button>
                             </div>                            
                         </form>

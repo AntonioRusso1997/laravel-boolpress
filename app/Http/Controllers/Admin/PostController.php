@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str; //classe per utilizzare dei metodi (tipo per creare lo slug)
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -27,7 +28,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        // return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -99,10 +102,13 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        if(!$post) {
+        if(!$post){
             abort(404);
         }
-        return view('admin.posts.edit', compact('post'));
+
+        $categories = Category::all();
+
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -118,7 +124,8 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'content' => 'required',
             'thumb' => 'required',
-            'author' => 'required'
+            'author' => 'required',
+            'category_id'=>'nullable|exists:categories,id'
         ]);
         $form_data = $request->all();
         //Verifico se il titolo ricevuto dal form è diverso dal vecchio

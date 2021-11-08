@@ -15,7 +15,7 @@
                             <div class="col text-white font-weight-bold pl-3">Post</div>
                             <div class="d-none d-md-block col-6 text-muted">
                                 <div class="row no-gutters align-items-center">
-                                    <div class="col-3 text-white">Threads</div>
+                                    <div class="col-3 text-white">Category</div>
                                     <div class="col-3 text-white">Replies</div>
                                     <div class="col-6 text-white">Author</div>
                                 </div>
@@ -28,11 +28,15 @@
                                 <div class="col"><a href="{{ route('posts.show', $post->slug) }}" class="my-text-lightblue text-big font-weight-semibold" data-abc="true">{{$post['title']}}</a></div>
                                 <div class="d-none d-md-block col-6">
                                     <div class="row no-gutters align-items-center">
+                                        <div class="col-3 text-light">                                            
+                                            @if ($post->category)
+                                                {{$post->category->name}}
+                                            @endif                                            
+                                        </div>
                                         <div class="col-3 text-light">100</div>
-                                        <div class="col-3 text-light">100</div>
-                                        <div class="media col-6 align-items-center"> <img src="https://i.imgur.com/Ur43esv.jpg" alt="" class="d-block ui-w-30 rounded-circle">
+                                        <div class="media col-6 align-items-center"> <img src="https://spesavicino.it/storage/03630380982/img/profile/logo.jpg" alt="" class="d-block ui-w-30 rounded-circle">
                                             <div class="media-body flex-truncate ml-2"> <a href="" class="d-block text-truncate" data-abc="true">{{$post['author']}}</a>
-                                                <div class="text-white small text-truncate">{{$post['created_at']}} &nbsp;·&nbsp;</div>
+                                                <div class="text-white small text-truncate">{{$post['created_at']}}</div>
                                             </div>
                                         </div>
                                     </div>
