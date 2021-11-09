@@ -52,6 +52,17 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <p class="text-white my-font-s20" for="author">Sezionare i Tag</p>
+                                @foreach ($tags as $tag)
+                                    <div class="form-check form-check-inline">
+                                        <input 
+                                        {{in_array($tag->id, old('tags', [])) ? 'checked' : null}}
+                                        value="{{ $tag->id }}" type="checkbox" name="tags[]" class="form-check-input" id="{{'tag' . $tag->id}}">
+                                        <label class="form-check-label text-white" for="{{'tag' . $tag->id}}">{{ $tag->name }}</label>
+                                    </div>   
+                                @endforeach
+                            </div>
+                            <div class="form-group">
                                <button type="submit" class="btn btn-success">Invia</button>
                             </div>                            
                         </form>
