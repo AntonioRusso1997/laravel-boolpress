@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="my-main-bg h-100">
+<body class="my-main-bg">
     <nav style="height: 50px" class="my-navbar navbar navbar-expand-md navbar-dark flex-md-nowrap p-0">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0 h-100" href="{{ route('admin.index') }}"><img class="h-100" src="https://i.ibb.co/F3Wvjqb/boolean-forum.png" alt=""></a>
         <ul class="navbar-nav px-3 ml-auto">
@@ -42,7 +42,7 @@
     </nav>
     <div class="container-fluid h-100">
         <div class="row gx-4 h-100">
-            <nav class="my-sidebar h-100 col-md-2 d-none d-md-block bg-light sidebar py-4">
+            <nav class="my-sidebar col-md-2 d-none d-md-block bg-light sidebar py-4">
                 <div class="sidebar-sticky h-100">
                     <ul class="nav flex-column h-100">
                         <li class="nav-item">
