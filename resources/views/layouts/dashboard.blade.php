@@ -82,9 +82,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ route('admin.tags.index') }}">
                                 <i class="fas fa-tags"></i>
                                 Tags
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.tags.create') }}">
+                                <i class="fas fa-plus"></i>
+                                New Tag
                             </a>
                         </li>
                     </ul>

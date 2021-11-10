@@ -108,6 +108,9 @@
                 <div class="links">
                     <a href="{{route('categories.index')}}">--Categories--</a>
                 </div>
+                <div class="links">
+                    <a href="{{route('tags.index')}}">--Tags--</a>
+                </div>
             </div>
         </div>
     </body>

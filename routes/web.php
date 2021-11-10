@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index')->name('index');
 //Rotta per guest
 Route::resource('/posts', 'PostController');
 Route::resource('/categories', 'CategoryController');
+Route::resource('/tags', 'TagController');
 
 //Serie di rotte che gestisce tutto il meccanismo di autenticazione
 Auth::routes();

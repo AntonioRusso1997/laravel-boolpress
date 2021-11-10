@@ -115,7 +115,7 @@ class TagController extends Controller
 
         $tag->update($form_data);
 
-        return redirect()->route('admin.tags.index')->with('inserted', 'Il tag è stata correttamente modificato');
+        return redirect()->route('admin.tags.index')->with('inserted', 'Il tag è stato correttamente modificato');
     }
 
     /**
@@ -127,5 +127,7 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
+
+        return redirect()->route('admin.tags.index')->with('inserted', 'Il tag è stat cancellato');
     }
 }

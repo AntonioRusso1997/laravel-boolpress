@@ -8,7 +8,7 @@
                         <h2 class="mt-2 mb-3 text-white"> Crea nuova categoria</h2>
                     </div>
                     <div class="card-body d-flex flex-column py-3 my-hr px-4">
-                        <form action="{{ route('admin.categories.store')}}" method="post">
+                        <form action="{{ route('admin.tags.store')}}" method="post">
                             @csrf
                             @method('POST')
                             <div class="form-group">
