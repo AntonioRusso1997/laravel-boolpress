@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid w-75 mx-auto">
         <div class="row d-flex justify-content-between align-items-center mb-2">
-            <p class=" col-8 mb-3 d-flex align-items-center">Visualizzazione post {{$post->id}}</p>
+            <p class=" col-8 mb-3 d-flex align-items-center text-light">Categoria: <a class="ml-2 my-text-lightblue" href="{{ route('admin.categories.show', $post->category['id']) }}">{{ $post->category['name'] }}</a></p>
             <div class="div col-4 d-flex justify-content-end align-items-center gx-3">
                 <a class="btn btn-outline-warning mx-2 expand-button e-button" data-mdb-ripple-color="dark" href="{{ route('admin.posts.edit', $post['id']) }}" class="card-link"><i class="far fa-edit"></i> Edit</a>
                 <form class="delete-post" method="post" action="{{ route('admin.posts.destroy', $post['id']) }}">
@@ -23,7 +23,13 @@
                         <img class="align-self-center w-50 mb-4 my-shadow" src="{{$post['thumb']}}" alt="{{$post['title']}}">
                         <p class="text-white my-font-s20">{!! $post['content'] !!}</p>                        
                         <hr class="m-0 my-hr">
-                        <p class="text-muted">Lo slug è: {{$post['slug']}}</p>
+                        <div class="d-flex list-inline">
+                                <div class="text-light">tag del post:
+                                @foreach ($post->tags as $tag)
+                                    <a href="{{ route('admin.tags.show', $tag['id']) }}" class="mx-3 my-text-lightblue">{{$tag['name']}}</a> 
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

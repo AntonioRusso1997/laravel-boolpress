@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-fluid w-75 mx-auto">
-        <p class="mb-3">Visualizzazione post {{$post->id}}</p>
+        <p class=" col-8 mb-3 d-flex align-items-center text-light">Categoria: <a class="ml-2 my-text-lightblue" href="{{ route('categories.show', $post->category['id']) }}">{{ $post->category['name'] }}</a></p>
         <div class="row">
             <div class="col-12 d-flex flex-column">
                 <div class="card my-bg mb-3 my-shadow">
@@ -12,7 +12,13 @@
                         <img class="align-self-center w-50 mb-4 my-shadow" src="{{$post['thumb']}}" alt="{{$post['title']}}">
                         <p class="text-white my-font-s20">{!! $post['content'] !!}</p>                        
                         <hr class="m-0 my-hr">
-                        <p class="text-muted">Lo slug è: {{$post['slug']}}</p>
+                        <div class="d-flex list-inline">
+                            <div class="text-light">tag del post:
+                            @foreach ($post->tags as $tag)
+                                <a href="{{ route('tags.show', $tag['id']) }}" class="mx-3 my-text-lightblue">{{$tag['name']}}</a> 
+                            @endforeach
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 @section('content')
     <div class="container-fluid d-flex flex-column">
         <div class="container">

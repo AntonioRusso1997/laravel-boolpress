@@ -48,6 +48,7 @@ main {
 .my-text-lightblue {
     color: #7dc4ff;
     &:hover {
+        cursor: pointer;
         color: white;
         text-decoration: none;
     }
