@@ -79,6 +79,7 @@
             @if (Route::has('login'))
                 <div class="top-right links d-flex">
                     @auth
+                        <a href="/contact">Contattaci</a>
                         <a class="nav-link" href="{{ url('/') }}">Home</a>
                         <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -88,6 +89,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                     @else
+                        <a href="/contact">Contattaci</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
