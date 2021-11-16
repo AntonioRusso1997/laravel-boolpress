@@ -8,7 +8,7 @@
                         <h2 class="mt-2 mb-3 text-white"> Crea nuovo post</h2>
                     </div>
                     <div class="card-body d-flex flex-column py-3 my-hr px-4">
-                        <form action="{{ route('admin.posts.store')}}" method="post">
+                        <form action="{{ route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
                             <div class="form-group">
@@ -19,9 +19,10 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="text-white my-font-s20" for="thumb">Thumb</label>
-                                <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{old('thumb')}}">
-                                @error('thumb')
+                                <label class="text-white my-font-s20" for="image">Inserisci Immagine</label>
+                                <input type="file" name="image" id="image" class="form-control @error('thumb') is-invalid @enderror">{!!old('thumb')!!}">
+                                {{-- <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{old('thumb')}}"> --}}
+                                @error('image')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

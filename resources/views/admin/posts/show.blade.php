@@ -20,7 +20,8 @@
                         <h2 class="mt-2 mb-3 text-white">{{$post['title']}}</h2>
                     </div>
                     <div class="card-body d-flex flex-column py-3 my-hr px-4">
-                        <img class="align-self-center w-50 mb-4 my-shadow" src="{{$post['thumb']}}" alt="{{$post['title']}}">
+                        {{-- <img class="align-self-center w-50 mb-4 my-shadow" src="{{$post['thumb']}}" alt="{{$post['title']}}"> --}}
+                        <img src="{{ asset('storage/'.$post->thumb)}}" alt="{{ $post->title}}">
                         <p class="text-white my-font-s20">{!! $post['content'] !!}</p>                        
                         <hr class="m-0 my-hr">
                         <div class="d-flex list-inline">

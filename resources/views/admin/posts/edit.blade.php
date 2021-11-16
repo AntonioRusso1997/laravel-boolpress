@@ -8,7 +8,7 @@
                         <h2 class="mt-2 mb-3 text-white"> Crea post</h2>
                     </div>
                     <div class="card-body d-flex flex-column py-3 my-hr px-4">
-                        <form action="{{ route('admin.posts.update', $post->id)}}" method="post">
+                        <form action="{{ route('admin.posts.update', $post->id)}}" method="post" enctype='multipart/form-data'>
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -19,10 +19,16 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                @if ($post->thumb)
+                                    <p>Thumb attuale:</p>
+                                    <img class="d-block" src="{{ asset('storage/' .$post->thumb) }}" alt="">
+                                @else
+                                    <p class="text-danger">Immagine di copertina non presente</p>    
+                                @endif
                                 <label class="text-white my-font-s20" for="thumb">Thumb</label>
-                                <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{ old('thumb',$post['thumb'])}}">
-                                @error('thumb')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                <input type="file" name='image' id='image' class="@error('image') is-invalid @enderror">
+                                @error('image')
+                                    <div class="alert alert-danger">{{message}}</div>
                                 @enderror
                             </div>
                             <div class="form-group">

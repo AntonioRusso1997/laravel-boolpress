@@ -8,6 +8,7 @@ use Illuminate\Support\Str; //classe per utilizzare dei metodi (tipo per creare 
 use App\Post;
 use App\Category;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -50,13 +51,23 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'thumb' => 'required',
+            // 'image' => 'nullable|image',
             'author' => 'required',
             'category_id' => 'nullable|exists:categories,id',
             'tags' => 'exists:tags,id'
         ]);
         
         $form_data = $request->all();
+
+        // Verifico se è stata caricata unìimmmagine
+        if(array_key_exists('image', $form_data)) {
+            //se esiste salviamo l'immagine e recuperiamo il path
+            $thumb_path = Storage::put('post_thumbs', $form_data['image']);
+            
+            //aggiungiamo all'array che viene usato nella funzione fill 
+            //la chiave thumb che contiene il percorso relativo dell'immagine caricata a partire da public/storage.
+            $form_data['thumb'] = $thumb_path;
+        }
 
         $new_post = new Post();
         $new_post->fill($form_data);
@@ -76,6 +87,7 @@ class PostController extends Controller
         }
 
         $new_post->slug = $slug;
+
         $new_post->save();
 
         $new_post->tags()->attach($form_data['tags']);
@@ -130,7 +142,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'thumb' => 'required',
+            'image'=>'nullable|image',
             'author' => 'required',
             'category_id'=>'nullable|exists:categories,id'
         ]);
@@ -151,6 +163,13 @@ class PostController extends Controller
                 $contatore++;
             }
             $form_data['slug'] = $slug;
+        }
+
+        //Verifico se è stata caricata un'immagine
+        if(array_key_exists('image', $form_data)) {
+            // salvo l'immagine e recupero il path
+            $thumb_path = Storage::put('post_thumbs', $form_data['image']);
+            $form_data['thumb'] = $thumb_path;
         }
 
         $post->update($form_data);
